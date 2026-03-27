@@ -151,3 +151,52 @@ function findAllUniqueElements(arr = [1, 2, 2, 3, 4, 4]) {
 }
 
 // console.log(findAllUniqueElements());
+
+function secondlargestnum(arr) {
+  if (!Array.isArray(arr)) return null;
+
+  // check the length
+  if (arr.length <= 1) return arr;
+
+  // second largest in array
+  let first = -Infinity;
+  let second = -Infinity;
+
+  for (let val of arr) {
+    if (val > first) {
+      second = first;
+      first = val;
+    } else if (val > second && val !== first) {
+      second = val;
+    }
+  }
+
+  return second;
+}
+// Input: [10, 20, 4, 45, 99]
+// Output: 45
+// console.log(secondlargestnum([10, 20, 4, 45, 99]));
+
+function kLargestelement(arr = [10, 20, 4, 45, 99], k = 2) {
+  // based on sorting
+  let result = arr.sort((a, b) => b - a)[k - 1];
+  return result;
+}
+function kLargestelementheap(arr = [10, 20, 4, 45, 99], k = 2) {
+  if (!Array.isArray(arr) || k > arr.length) return -1;
+
+  let heap = [];
+
+  for (let num of arr) {
+    heap.push(num);
+    heap.sort((a, b) => a - b); // simulate min heap
+    console.log(heap);
+
+    if (heap.length > k) {
+      heap.shift(); // remove smallest
+    }
+  }
+
+  return heap[0];
+}
+// console.log(kLargestelementheap());
