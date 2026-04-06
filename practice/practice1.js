@@ -200,3 +200,24 @@ function kLargestelementheap(arr = [10, 20, 4, 45, 99], k = 2) {
   return heap[0];
 }
 // console.log(kLargestelementheap());
+
+// count the no of digits in a number
+
+function countDigits(num = 983221) {
+  // method 1 :convert to string and return length
+  // return num.toString().length;
+
+  //method 2 divide by 10 and count inc
+  let count = 0;
+  while (num > 0) {
+    num = Math.floor(num / 10);
+    count++;
+  }
+
+  return count;
+}
+console.log(countDigits());
+
+class name {
+  constructor(parameters) {}
+}
