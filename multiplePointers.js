@@ -12,6 +12,7 @@ countUniqueValues([]) // 0
 countUniqueValues([-2,-1,-1,0,1]) // 4
 */
 // solve using the two pointer approach
+//get all the unique elements in the start of the array
 function countUniqueValues2(arr) {
   if (arr.length === 0) return 0;
   // counter

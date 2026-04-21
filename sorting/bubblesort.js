@@ -4,6 +4,9 @@
 //  [ 5, 3, 4, 1, 2 ]
 
 // version 1 with last element also getting check for swap
+//o(n2)
+//loop1 for iteration,loop2 for check with current and next ,if current is greater than next swap
+//additional condtion 1)2nd loop only till length -i ,2)if no swap then skip the current iteration
 function bubbblesort(arr) {
   // if array is empty return []
   if (arr.length === 0) return [];
@@ -19,6 +22,7 @@ function bubbblesort(arr) {
 
   return arr;
 }
+
 // version 2 last element should not get checked
 function bubbblesort2(arr) {
   // if array is empty return []
@@ -60,3 +64,23 @@ function bubbblesort3(arr) {
 }
 // console.log(bubbblesort2([5, 3, 4, 1, 2]));
 console.log(bubbblesort3([1, 3, 5, 6, 4]));
+
+//
+function bubblesortpract(arr) {
+  if (arr.length === 0) return [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let swap = false;
+    for (let j = 0; j < arr.length - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        swap = true;
+      }
+    }
+    if (!swap) {
+      break;
+    }
+  }
+
+  return arr;
+}
